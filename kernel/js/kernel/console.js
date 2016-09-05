@@ -16,7 +16,7 @@
                         rc[1]--;
                         if(rc[1] < 0) {
                             rc[1] = Console.size()[0] - 1;
-                            rc[0]--;
+                            rc[0]-=1;
                             if(rc[0] < 0) {
                                 rc[0] = 0;
                             }
@@ -30,7 +30,7 @@
                 }
             }
             if(this._buffered) {
-                if(c === "\x7f" /* backspace */) {
+                if(c === "\x7f") {
                     if(this._buffer.length > 0) {
                         this._buffer = this._buffer.substr(0, this._buffer.length - 1);
                     }
